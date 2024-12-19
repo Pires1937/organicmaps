@@ -110,6 +110,20 @@ NSString *const kSettingsSegue = @"Map2Settings";
 
 #pragma mark - Map Navigation
 
+- (void)showTrackRecordingPlacePage {
+  [TrackRecordingManager.shared addObserver:self recordingStateDidChangeHandler:^(TrackRecordingState state, TrackInfo * _Nullable trackInfo) {
+    switch (state) {
+      case TrackRecordingStateInactive:
+        [self hidePlacePage];
+        // TODO: (KK) Open the track's PP.
+        break;
+      case TrackRecordingStateActive:
+        [self showOrUpdatePlacePage:[[PlacePageData alloc] initWithTrackInfo:trackInfo]];
+        break;
+    }
+  }];
+}
+
 - (void)showOrUpdatePlacePage:(PlacePageData *)data {
   self.controlsManager.trafficButtonHidden = YES;
   if (self.placePageVC != nil) {

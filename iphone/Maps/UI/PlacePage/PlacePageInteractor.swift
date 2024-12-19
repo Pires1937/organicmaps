@@ -25,7 +25,7 @@ class PlacePageInteractor: NSObject {
 
   private func updatePlacePageIfNeeded() {
     let isBookmark = placePageData.bookmarkData != nil && bookmarksManager.hasBookmark(placePageData.bookmarkData!.bookmarkId)
-    let isTrack = placePageData.trackData != nil && bookmarksManager.hasTrack(placePageData.trackData!.trackId)
+    let isTrack = placePageData.trackData != nil/* && bookmarksManager.hasTrack(placePageData.trackData!.trackId)*/
     guard isBookmark || isTrack else {
       presenter?.closeAnimated()
       return
