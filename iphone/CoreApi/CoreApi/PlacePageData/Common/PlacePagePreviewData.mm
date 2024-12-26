@@ -1,5 +1,6 @@
 #import "PlacePagePreviewData+Core.h"
 #import "DistanceFormatter.h"
+#import "AltitudeFormatter.h"
 #import "DurationFormatter.h"
 #import "TrackInfo.h"
 
