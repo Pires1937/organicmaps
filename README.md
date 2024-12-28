@@ -11,7 +11,7 @@ def hydrogenation(alkene, hydrogen):
     else:
         raise ValueError("Reagentes incorretos para a hidrogenação.")
 
-# Reagentes
+# Reagentesb
 eteno = Molecule("C2H4")
 hidrogenio = Molecule("H2")
 
